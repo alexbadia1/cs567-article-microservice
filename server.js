@@ -3,6 +3,7 @@ var express = require('express'),
   mongoose = require('mongoose'),
   secrets = require('./config/secrets'),
   bodyParser = require('body-parser'),
+  cookieParser = require('cookie-parser'),
   authMiddleware = require('./middleware/auth');
 
 var app = express();
@@ -30,6 +31,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.use(authMiddleware);
 
