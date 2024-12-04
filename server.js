@@ -13,7 +13,7 @@ mongoose.connect(secrets.mongo_connection, { useNewUrlParser: true });
 
 var allowCrossDomain = function (req, res, next) {
   // This is insecure, i know
-  res.header('Access-Control-Allow-Origin', req.header('origin'));
+  res.header('Access-Control-Allow-Origin', req.header('Origin'));
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header(
     'Access-Control-Allow-Headers',
