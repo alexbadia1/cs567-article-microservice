@@ -3,6 +3,7 @@ const { auth } = require('../../config/firebase');
 
 const authenticate = async (req, res, next) => {
   try {
+    console.log('req.header:', req.header);
     const parsedCookies = cookie.parse(req.header('cookie'));
     const idToken = parsedCookies.access_token;
     const decodedToken = await auth.verifyIdToken(idToken);
