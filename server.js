@@ -3,8 +3,8 @@ var express = require('express'),
   mongoose = require('mongoose'),
   secrets = require('./config/secrets'),
   bodyParser = require('body-parser'),
-  cookieParser = require('cookie-parser'),
   authMiddleware = require('./middleware/auth');
+cors = require('cors');
 
 var app = express();
 
@@ -12,18 +12,14 @@ var port = process.env.PORT || 4000;
 
 mongoose.connect(secrets.mongo_connection, { useNewUrlParser: true });
 
-var allowCrossDomain = function (req, res, next) {
-  // This is insecure, i know
-  res.header('Access-Control-Allow-Origin', req.header('Origin'));
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
-  );
-  res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-  next();
+var corsOptions = {
+  origin: '*', // Allow all origins
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  allowedHeaders:
+    'Authorization, X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept',
 };
-app.use(allowCrossDomain);
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(
   bodyParser.urlencoded({
@@ -31,7 +27,6 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-app.use(cookieParser());
 
 app.use(authMiddleware);
 
