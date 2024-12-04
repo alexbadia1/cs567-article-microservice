@@ -8,12 +8,6 @@
   "scripts": {
     "start": "nodemon --exec node server.js"
   },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ]
-  },
   "dependencies": {
     "body-parser": "^1.17.2",
     "dotenv": "^16.4.7",
@@ -21,5 +15,17 @@
     "firebase": "^11.0.2",
     "mongoose": "^5.4.18",
     "nodemon": "^1.11.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3"
   }
 }

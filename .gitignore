@@ -9,3 +9,4 @@ public/
 public/*
 .env
 package-lock.json
+.vercel
