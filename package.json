@@ -1,0 +1,25 @@
+{
+  "name": "CS567_Article-Microservice",
+  "version": "1.0.0",
+  "description": "CS 567 Article Microservice",
+  "authors": [
+    "Alex Badia <abadia2@illinois.edu>"
+  ],
+  "scripts": {
+    "start": "nodemon --exec node server.js"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.15.3",
+    "firebase": "^11.0.2",
+    "mongoose": "^5.4.18",
+    "nodemon": "^1.11.0"
+  }
+}
