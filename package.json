@@ -13,6 +13,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.15.3",
     "firebase": "^11.0.2",
+    "firebase-admin": "^13.0.1",
     "mongoose": "^5.4.18",
     "nodemon": "^1.11.0"
   },
