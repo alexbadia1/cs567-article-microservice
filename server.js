@@ -13,8 +13,8 @@ var port = process.env.PORT || 4000;
 mongoose.connect(secrets.mongo_connection, { useNewUrlParser: true });
 
 var corsOptions = {
-  origin: '*', // Allow all origins
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  origin: '*',
+  methods: 'GET',
   allowedHeaders:
     'Authorization, X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept',
 };
